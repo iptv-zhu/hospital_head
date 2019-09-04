@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">床头机</string>
+    <string name="hospital_name">深圳市人民医院</string>
+    <string name="btn1">呼叫医生站</string>
+    <string name="btn2">呼叫护士站</string>
+    <string name="btn3">进入护理</string>
+
+    <string name="time_hm">09:00</string>
+    <string name="time_ymd">2019/08/02</string>
+    <string name="time_e">星期五</string>
+
+    <string name="room_num">1020</string>
+    <string name="room">房</string>
+    <string name="bed_num">12-14</string>
+    <string name="bed">床</string>
+    <string name="user_name">患者姓名</string>
+</resources>

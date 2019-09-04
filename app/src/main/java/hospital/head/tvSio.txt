@@ -1,0 +1,57 @@
+终端分机sio通知事件（智能终端机，病床分机，ip门口机）
+
+url:   ip:8003/tv
+
+注册：register
+data:RegistVo json（将以下字段转成json格式）
+    private String mac;
+    private double version;
+    private int voice;
+    private String name;  //可为空
+    private Integer terType;   //终端类型（1,智能终端 2病床分机 3ip门口机）
+
+成功通知：success（终端是否连接上后台sio，以此为标准）
+错误通知：error
+
+修改终端名称：reName
+data:RegistVo json
+    private String mac;  //不可为空
+    private double version;
+    private int voice;
+    private String name;  //不可为空
+    private Integer terType ;//终端类型（1,智能终端 2病床分机 3ip门口机）
+
+升级：upgrade
+
+主题：theme
+
+//每4小时更新一次，终端上线更新一次
+天气更新事件:  weather
+
+//跑马灯消息更新或者新增事件，原有的跑马灯如果没有通知，则保持不变状态
+字幕更新事件:  title
+
+即时插播事件 in_play
+
+关机：close   定时关机：close-time
+
+开机：open    定时开机：open-time
+
+音量改变：vol
+
+//后台自动检测时间到了会把计划插播事件发送给终端，终端自己检测时间停止
+计划插播：msgInsert  发送数据，跟之前一样
+计划插播停止事件，msgStop    发送数据，计划插播id。判断当前插播与停止插播id是否相等，相等则停止计划插播
+
+
+//后台会把该终端当天任务下发，终端自己检测时间播放
+当天任务：todayCalendar   发送当天所有任务计划，请终端按时间执行
+
+消息通知事件：nt   string  （String可能是文字内容，可能是图片链接，也可能是视频连接）
+
+上传日志事件：uploadLog
+（直播，即时插播，计划管理，音乐播放，信息管理预览，问卷调查提交，滚动字幕，升级，商品管理，广告播放，播放节目单）
+data:UploadLogVo 将对象转换成json格式
+    private String mac;  //设备mac，不可为空
+    private String operatetion;  //操作事件，不可为空
+    private Integer terType;     //终端类型（1,智能终端 2病床分机 3ip门口机）

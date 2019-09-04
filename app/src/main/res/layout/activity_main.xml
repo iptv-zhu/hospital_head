@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <hospital.door.mvp.view.custom.Top
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="160px"
+        android:layout_below="@+id/top"
+        android:layout_marginLeft="25px"
+        android:layout_marginRight="25px"
+        android:background="@drawable/room_bg"
+        android:paddingLeft="25px"
+        android:paddingRight="25px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="消化内科"
+            android:textColor="@color/white"
+            android:textSize="50px"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <TextView
+            android:id="@+id/room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/room"
+            android:textColor="@color/white"
+            android:textSize="30px"
+            app:layout_constraintBottom_toBottomOf="@+id/room_num"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/room_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10px"
+            android:gravity="bottom"
+            android:text="@string/room_num"
+            android:textColor="@color/num"
+            android:textSize="60px"
+            app:layout_constraintBaseline_toBaselineOf="@+id/room"
+            app:layout_constraintRight_toLeftOf="@+id/room"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/bed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bed"
+            android:textColor="@color/white"
+            android:textSize="30px"
+            app:layout_constraintLeft_toLeftOf="@+id/room"
+            app:layout_constraintTop_toBottomOf="@+id/room" />
+
+        <TextView
+            android:id="@+id/bed_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/bed_num"
+            android:textColor="@color/num"
+            android:textSize="50px"
+            app:layout_constraintBaseline_toBaselineOf="@+id/bed"
+            app:layout_constraintRight_toRightOf="@+id/room_num"
+            app:layout_constraintTop_toBottomOf="@+id/room_num" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <ImageView
+        android:id="@+id/marquee_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25px"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/marquee_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <WebView
+        android:id="@+id/marquee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10px"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_marginRight="25px"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="@+id/marquee_icon"
+        app:layout_constraintLeft_toRightOf="@+id/marquee_icon"
+        app:layout_constraintTop_toTopOf="@+id/marquee_icon" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.5"
+        android:layout_marginLeft="25px"
+        android:layout_marginTop="18px"
+        android:layout_marginRight="25px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marquee_icon" />
+
+
+    <hospital.door.mvp.view.custom.Bottom
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14px"
+        android:background="@drawable/down_btn"
+        app:layout_constraintBottom_toTopOf="@+id/bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
